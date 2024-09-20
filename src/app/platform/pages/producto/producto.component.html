@@ -1,0 +1,51 @@
+<div class="container-producto">
+  <div class="row">
+    <div class="col-9">
+      <!-- Información del producto -->
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <button mat-icon-button type="button" routerLink="/inicio">
+            <mat-icon>keyboard_backspace</mat-icon>
+          </button>
+        </div>
+        <div class="col p-0">
+          <h1 class="txt2">Inicio/ {{productoNombre | titlecase}}/ Personalizado</h1>
+        </div>
+        <div>
+          <h1 class="title-personalizado">{{productoNombre + ' + ' + tituloPersonalizado | uppercase}}</h1>
+        </div>
+      </div>
+
+      <!-- Imagen del producto -->
+      <div class="container-img">
+        <img [src]="productoUrlImagen" alt="img-personalizada" class="img-personalizada">
+      </div>
+    </div>
+
+    <div class="col-3 menu">
+      <!-- Menú principal con botones generados dinámicamente -->
+      <div *ngIf="mostrarMenuPrincipal" class="filtro-container">
+        <button mat-raised-button class="filtro-btn" *ngFor="let filtro of filtros" (click)="filtroSeleccionado(filtro)">
+          {{ filtro | titlecase}}
+        </button>
+      </div>
+
+      <!-- Submenú dinámico -->
+      <div *ngIf="!mostrarMenuPrincipal" class="submenu-container">
+        <h2>Selecciona un {{ filtroActual | titlecase }}</h2>
+        <!-- Opciones del submenú basadas en el filtro seleccionado -->
+        <div class="row">
+          <button mat-button class="opcion-btn" *ngFor="let opcion of opcionesActuales">
+            {{ opcion | titlecase }}
+          </button>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="botones-accion">
+          <button mat-raised-button class="accion-btn" (click)="regresarAlMenuPrincipal()">Quitar</button>
+          <button mat-raised-button class="accion-btn">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

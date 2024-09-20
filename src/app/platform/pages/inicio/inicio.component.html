@@ -1,0 +1,18 @@
+<div class="container-inicio">
+  <div class="col">
+
+  <div class="row">
+    <h1 class="title-inicio">Personaliza y eleva tu outfit</h1>
+  </div>
+  
+  <div class="row row-cols-1 row-cols-md-4 row-cols-lg-3 g-3">
+    <div class="col" *ngFor="let producto of productos">
+      <div class="card" [routerLink]="['/producto', producto.nombre]">
+        <img [src]="producto | imagen" class="card-img-top" alt="Foto de producto">
+      </div>
+      <span class="txtbold"> {{producto.categoria | titlecase}} </span>
+    </div>
+  </div>
+  
+
+</div>

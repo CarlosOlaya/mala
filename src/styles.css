@@ -1,1 +1,726 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0px; 
+    padding: 0px; 
+    box-sizing: border-box;
+    font-family: Quicksand-Light, cursive;
+    color: rgb(85, 45, 35);
+    --mat-icon-color: rgb(65, 34, 26);
+    /* Quicksand-Bold */
+}
+
+body, html {
+    height: 100%;
+}
+
+/*---------------------------------------------*/
+a {
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 1.7;
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0px;
+}
+
+ul, li {
+    margin: 0px;
+    list-style-type: none;
+}
+
+/*---------------------------------------------*/
+input {
+    outline: none;
+    border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+/*---------------------------------------------*/
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Utility ]*/
+.txt1 {
+  font-size: 24px;
+  margin: 0px;
+}
+
+.txt2 {
+  font-size: 18px;
+  margin: 0px;
+}
+
+.txtbold{
+  font-size: 24px;
+  font-family: "Quicksand-bold", bold , cursive;
+
+}
+
+.title-app {
+  font-size: 40px;
+  text-transform: capitalize;
+  text-align: center;
+
+}
+ 
+.title-container {
+  font-size: 18px ;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.card-img-app {
+  transform: translateY(-17px); /* Trasladar ligeramente hacia arriba  */
+  width: 70px;       /* Ajusta el tamaño de la imagen */
+  height: 70px;      /* Asegura que la imagen sea cuadrada */
+}
+
+.container-login100 {
+  background: linear-gradient(70deg, rgba(96,207,220) 0%, #0d6efd);
+  width: 100%;  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-center {
+  text-align: center;
+}
+
+.wrap-login100 {
+  width: 500px;
+  background: rgb(255,255,255,0.6);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  padding: 35px;
+}
+
+.container {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+/*------------------------------------------------------------------
+[ Form ]*/
+
+.login100-form {
+  width: 100%;
+}
+
+.login100-form-title {
+  display: block;
+  font-size: 30px;
+  color: #000000de;
+  line-height: 1.2;
+  text-align: center;
+}
+
+
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #d9d9d9;
+  margin-top: 23px;
+}
+
+
+.label-input100 {
+  font-size: 16px;
+  color: #000000de;
+  line-height: 1.5;
+  margin: 50px;
+}
+
+.input100 {
+  font-size: 16px;
+  color: #000000de;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 55px;
+  background: transparent;
+  padding: 0 7px 0 43px;
+
+}
+
+
+/*---------------------------------------------*/
+.focus-input100 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.focus-input100::after {
+  content: attr(data-symbol);
+  color: #adadad;
+  font-size: 22px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: calc(100% - 20px);
+  bottom: 0;
+  left: 0;
+  padding-left: 13px;
+  padding-top: 3px;
+}
+
+.focus-input100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #7f7f7f;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+
+.input100:focus + .focus-input100::before {
+  width: 100%;
+}
+
+.has-val.input100 + .focus-input100::before {
+  width: 100%;
+}
+
+.input100:focus + .focus-input100::after {
+  color:#3f51b5de;
+}
+
+.has-val.input100 + .focus-input100::after {
+  color:#3f51b5de;
+}
+
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-login100-form-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wrap-login100-form-btn {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2);
+}
+
+.login100-form-bgbtn {
+  position: absolute;
+  z-index: -1;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(70deg, rgba(96,207,220) 0%, #0d6efd);
+  top: 0;
+  left: -100%;
+  transition: all 0.4s;
+}
+
+.login100-form-btn {
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+.wrap-login100-form-btn:hover .login100-form-bgbtn {
+  left: 0;
+}
+
+.login100-form-btn:disabled {
+  background-color: grey;
+}
+
+
+/*[ PADDING ]
+///////////////////////////////////////////////////////////
+*/
+.p-t-0 {padding-top: 0px;}
+.p-t-1 {padding-top: 1px;}
+.p-t-2 {padding-top: 2px;}
+.p-t-3 {padding-top: 3px;}
+.p-t-4 {padding-top: 4px;}
+.p-t-5 {padding-top: 5px;}
+.p-t-6 {padding-top: 6px;}
+.p-t-7 {padding-top: 7px;}
+.p-t-8 {padding-top: 8px;}
+.p-t-9 {padding-top: 9px;}
+.p-t-10 {padding-top: 10px;}
+.p-t-11 {padding-top: 11px;}
+.p-t-12 {padding-top: 12px;}
+.p-t-13 {padding-top: 13px;}
+.p-t-14 {padding-top: 14px;}
+.p-t-15 {padding-top: 15px;}
+.p-t-16 {padding-top: 16px;}
+.p-t-17 {padding-top: 17px;}
+.p-t-18 {padding-top: 18px;}
+.p-t-19 {padding-top: 19px;}
+.p-t-20 {padding-top: 20px;}
+
+
+.p-b-0 {padding-bottom: 0px;}
+.p-b-1 {padding-bottom: 1px;}
+.p-b-2 {padding-bottom: 2px;}
+.p-b-3 {padding-bottom: 3px;}
+.p-b-4 {padding-bottom: 4px;}
+.p-b-5 {padding-bottom: 5px;}
+.p-b-6 {padding-bottom: 6px;}
+.p-b-7 {padding-bottom: 7px;}
+.p-b-8 {padding-bottom: 8px;}
+.p-b-9 {padding-bottom: 9px;}
+.p-b-10 {padding-bottom: 10px;}
+.p-b-11 {padding-bottom: 11px;}
+.p-b-12 {padding-bottom: 12px;}
+.p-b-13 {padding-bottom: 13px;}
+.p-b-14 {padding-bottom: 14px;}
+.p-b-15 {padding-bottom: 15px;}
+.p-b-16 {padding-bottom: 16px;}
+.p-b-17 {padding-bottom: 17px;}
+.p-b-18 {padding-bottom: 18px;}
+.p-b-19 {padding-bottom: 19px;}
+.p-b-20 {padding-bottom: 20px;}
+
+
+.p-l-0 {padding-left: 0px;}
+.p-l-1 {padding-left: 1px;}
+.p-l-2 {padding-left: 2px;}
+.p-l-3 {padding-left: 3px;}
+.p-l-4 {padding-left: 4px;}
+.p-l-5 {padding-left: 5px;}
+.p-l-6 {padding-left: 6px;}
+.p-l-7 {padding-left: 7px;}
+.p-l-8 {padding-left: 8px;}
+.p-l-9 {padding-left: 9px;}
+.p-l-10 {padding-left: 10px;}
+.p-l-11 {padding-left: 11px;}
+.p-l-12 {padding-left: 12px;}
+.p-l-13 {padding-left: 13px;}
+.p-l-14 {padding-left: 14px;}
+.p-l-15 {padding-left: 15px;}
+.p-l-16 {padding-left: 16px;}
+.p-l-17 {padding-left: 17px;}
+.p-l-18 {padding-left: 18px;}
+.p-l-19 {padding-left: 19px;}
+.p-l-20 {padding-left: 20px;}
+
+.p-r-0 {padding-right: 0px;}
+.p-r-1 {padding-right: 1px;}
+.p-r-2 {padding-right: 2px;}
+.p-r-3 {padding-right: 3px;}
+.p-r-4 {padding-right: 4px;}
+.p-r-5 {padding-right: 5px;}
+.p-r-6 {padding-right: 6px;}
+.p-r-7 {padding-right: 7px;}
+.p-r-8 {padding-right: 8px;}
+.p-r-9 {padding-right: 9px;}
+.p-r-10 {padding-right: 10px;}
+.p-r-11 {padding-right: 11px;}
+.p-r-12 {padding-right: 12px;}
+.p-r-13 {padding-right: 13px;}
+.p-r-14 {padding-right: 14px;}
+.p-r-15 {padding-right: 15px;}
+.p-r-16 {padding-right: 16px;}
+.p-r-17 {padding-right: 17px;}
+.p-r-18 {padding-right: 18px;}
+.p-r-19 {padding-right: 19px;}
+.p-r-20 {padding-right: 20px;}
+
+/*[ MARGIN ]
+///////////////////////////////////////////////////////////
+*/
+.m-t-0 {margin-top: 0px;}
+.m-t-1 {margin-top: 1px;}
+.m-t-2 {margin-top: 2px;}
+.m-t-3 {margin-top: 3px;}
+.m-t-4 {margin-top: 4px;}
+.m-t-5 {margin-top: 5px;}
+.m-t-6 {margin-top: 6px;}
+.m-t-7 {margin-top: 7px;}
+.m-t-8 {margin-top: 8px;}
+.m-t-9 {margin-top: 9px;}
+.m-t-10 {margin-top: 10px;}
+.m-t-11 {margin-top: 11px;}
+.m-t-12 {margin-top: 12px;}
+.m-t-13 {margin-top: 13px;}
+.m-t-14 {margin-top: 14px;}
+.m-t-15 {margin-top: 15px;}
+.m-t-16 {margin-top: 16px;}
+.m-t-17 {margin-top: 17px;}
+.m-t-18 {margin-top: 18px;}
+.m-t-19 {margin-top: 19px;}
+.m-t-20 {margin-top: 20px;}
+
+.m-b-0 {margin-bottom: 0px;}
+.m-b-1 {margin-bottom: 1px;}
+.m-b-2 {margin-bottom: 2px;}
+.m-b-3 {margin-bottom: 3px;}
+.m-b-4 {margin-bottom: 4px;}
+.m-b-5 {margin-bottom: 5px;}
+.m-b-6 {margin-bottom: 6px;}
+.m-b-7 {margin-bottom: 7px;}
+.m-b-8 {margin-bottom: 8px;}
+.m-b-9 {margin-bottom: 9px;}
+.m-b-10 {margin-bottom: 10px;}
+.m-b-11 {margin-bottom: 11px;}
+.m-b-12 {margin-bottom: 12px;}
+.m-b-13 {margin-bottom: 13px;}
+.m-b-14 {margin-bottom: 14px;}
+.m-b-15 {margin-bottom: 15px;}
+.m-b-16 {margin-bottom: 16px;}
+.m-b-17 {margin-bottom: 17px;}
+.m-b-18 {margin-bottom: 18px;}
+.m-b-19 {margin-bottom: 19px;}
+.m-b-20 {margin-bottom: 20px;}
+
+.m-l-0 {margin-left: 0px;}
+.m-l-1 {margin-left: 1px;}
+.m-l-2 {margin-left: 2px;}
+.m-l-3 {margin-left: 3px;}
+.m-l-4 {margin-left: 4px;}
+.m-l-5 {margin-left: 5px;}
+.m-l-6 {margin-left: 6px;}
+.m-l-7 {margin-left: 7px;}
+.m-l-8 {margin-left: 8px;}
+.m-l-9 {margin-left: 9px;}
+.m-l-10 {margin-left: 10px;}
+.m-l-11 {margin-left: 11px;}
+.m-l-12 {margin-left: 12px;}
+.m-l-13 {margin-left: 13px;}
+.m-l-14 {margin-left: 14px;}
+.m-l-15 {margin-left: 15px;}
+.m-l-16 {margin-left: 16px;}
+.m-l-17 {margin-left: 17px;}
+.m-l-18 {margin-left: 18px;}
+
+.m-r-0 {margin-right: 0px;}
+.m-r-1 {margin-right: 1px;}
+.m-r-2 {margin-right: 2px;}
+.m-r-3 {margin-right: 3px;}
+.m-r-4 {margin-right: 4px;}
+.m-r-5 {margin-right: 5px;}
+.m-r-6 {margin-right: 6px;}
+.m-r-7 {margin-right: 7px;}
+.m-r-8 {margin-right: 8px;}
+.m-r-9 {margin-right: 9px;}
+.m-r-10 {margin-right: 10px;}
+.m-r-11 {margin-right: 11px;}
+.m-r-12 {margin-right: 12px;}
+.m-r-13 {margin-right: 13px;}
+.m-r-14 {margin-right: 14px;}
+.m-r-15 {margin-right: 15px;}
+.m-r-16 {margin-right: 16px;}
+.m-r-17 {margin-right: 17px;}
+.m-r-18 {margin-right: 18px;}
+.m-r-19 {margin-right: 19px;}
+.m-r-20 {margin-right: 20px;}
+
+
+.text-center {text-align: center;}
+.text-left {text-align: left;}
+.text-right {text-align: right;}
+.text-middle {vertical-align: middle;}
+
+
+/*[ Display ]
+-----------------------------------------------------------
+*/
+.dis-none {display: none;}
+.dis-block {display: block;}
+.dis-inline {display: inline;}
+.dis-inline-block {display: inline-block;}
+.dis-flex {
+display: -webkit-box;
+display: -webkit-flex;
+display: -moz-box;
+display: -ms-flexbox;
+display: flex;
+}
+
+.flex-col-c {
+display: -webkit-box;
+display: -webkit-flex;
+display: -moz-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-flex-direction: column;
+-moz-flex-direction: column;
+-ms-flex-direction: column;
+-o-flex-direction: column;
+flex-direction: column;
+-ms-align-items: center;
+align-items: center;
+}
+
+/* Estilo para el contenedor del select */
+.select100 {
+  position: relative;
+  width: 100%;
+}
+
+/* Estilo para el select */
+.select100 select {
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 55px;
+  background: transparent;
+  padding: 0 7px 0 43px;
+  border: none;
+  border-bottom: 2px solid #d9d9d9;
+  cursor: pointer; /* Cambiar el cursor al pasar cerca del select */
+}
+
+/* Estilo para el efecto de enfoque */
+.select100 .focus-input100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #7f7f7f;
+  transition: all 0.4s;
+}
+
+/* Estilo para el efecto de enfoque */
+.select100 select:focus + .focus-input100::before {
+  width: 100%;
+}
+
+/* Estilo para el efecto de enfoque */
+.select100 select:focus + .focus-input100::after {
+  color: #3f51b5de;
+}
+
+/* Estilo para la etiqueta */
+.select100 .label-input100 {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.5;
+  padding-left: 7px;
+}
+
+/* Estilo para el efecto de enfoque */
+.select100 .focus-input100::after {
+  content: attr(data-symbol);
+  font-family: Material-Design-Iconic-Font;
+  color: #adadad;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: calc(100% - 20px);
+  bottom: 0;
+  left: 0;
+  padding-left: 13px;
+  padding-top: 3px;
+  pointer-events: none;
+}
+
+/* Estilo para el efecto de enfoque */
+.select100 .focus-input100 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* Estilo para el contenedor de los botones de radio */
+.radio100 {
+  position: relative;
+  width: 100%;
+}
+
+/* Estilo para los botones de radio */
+.radio100 input[type="radio"] {
+  display: none; /* Ocultar los botones de radio originales */
+}
+
+/* Estilo para los botones de radio personalizados */
+.radio100 input[type="radio"] + label {
+  font-family: Poppins-Regular;
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.7;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Estilo para los botones de radio cuando se pasa el ratón por encima */
+.radio100 input[type="radio"] + label:hover {
+  transform: scale(1.2); /* Aumentar ligeramente el tamaño */
+  color: #3f51b5;
+}
+
+/* Estilo para los botones de radio seleccionados */
+.radio100 input[type="radio"]:checked + label {
+  color: #3f51b5;
+  transform: scale(1.2); /* Aumentar ligeramente el tamaño */
+}
+
+/* Estilo para el efecto de enfoque */
+.radio100 input[type="radio"]:focus + label::before {
+  width: 100%;
+}
+
+/* Estilo para el efecto de enfoque */
+.radio100 input[type="radio"]:focus + label::after {
+  color: #3f51b5;
+}
+
+/* Estilo para el efecto de enfoque */
+.radio100 label::after {
+  content: attr(data-symbol);
+  color: #adadad;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: calc(100% - 20px);
+  bottom: 0;
+  left: 0;
+  padding-left: 13px;
+  padding-top: 3px;
+  pointer-events: none;
+}
+
+/* Estilo para el contenedor de enfoque en los botones de radio */
+.radio100 .focus-input100 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.span100 {
+  font-size: 16px; /* Tamaño de fuente del texto */
+  color: black;
+}
+
+/* esitlos para los mattoolbar */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar-interno { 
+  background: transparent !important;
+  margin-bottom: 15px !important;
+  height: 50px !important;
+}  
+
+.button-container-agregar{
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Agrega una sombra suave */
+}
+
+
+@media (max-width: 599px) {    
+  .button-text-interno {
+    display: none;
+  }
+
+  .mat-toolbar-interno { 
+      margin-bottom: 10px !important;
+      padding: 0 0px !important;
+  }  
+}
+
+/* estilos para las tablas   */
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  background-color: #f3f3f3;
+  color: #000000;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  table{
+    display: block;
+  }
+
+  .mat-mdc-row .mat-mdc-cell {
+    padding: 4px;
+    font-size: 12px;
+  }
+}
+
+.row{
+  margin: 0px;
+}

@@ -1,0 +1,139 @@
+/* Estilos generales para el mat-toolbar */
+.mat-toolbar-nav {
+  padding: 0 16px;
+  height: 67px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Clase para el fondo blanco */
+.toolbar-white {
+  background-color: #fcf9f2;
+}
+
+.toolbar-white .txt1,
+.toolbar-white .txt2,
+.toolbar-white .mat-icon {
+  color: rgb(85, 45, 35);
+  --mat-icon-color: rgb(85, 45, 35);
+}
+
+.toolbar-white .txt2 {
+  border-bottom: 2px solid rgb(85, 45, 35); /* Subrayado marrón en fondo blanco */
+}
+
+/* Clase para el fondo bronce */
+.toolbar-bronze {
+  background-color: rgb(85, 45, 35);
+}
+
+.toolbar-bronze .txt1,
+.toolbar-bronze .txt2,
+.toolbar-bronze .mat-icon,
+.toolbar-bronze .d-none.d-lg-flex.align-items-center a:not(:last-child)::after {
+  color: white;
+  --mat-icon-color: white;
+}
+
+.toolbar-bronze .txt2 {
+  border-bottom: 2px solid white; /* Subrayado blanco en fondo bronce */
+}
+
+/* Otros estilos existentes */
+.d-none.d-lg-flex.align-items-center a {
+  padding: 0 30px; /* Espacio entre los enlaces y las líneas */
+  position: relative;
+}
+
+.d-none.d-lg-flex.align-items-center a:not(:last-child)::after {
+  content: "|"; /* Línea vertical */
+  color: rgb(85, 45, 35);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Fondo de plataforma */
+.wrap-platform {
+  background: #ffffff;
+  background-image: url("/assets/logo-beige.png");
+  background-repeat: no-repeat, no-repeat; /* No repetir ninguna de las imágenes */
+  background-size: 170% 170%; /* Tamaño de las imágenes */
+  background-position: center center;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 599px) {
+  .wrap-login100 {
+    width: 90%;
+    margin: 5%;
+  }
+}
+
+/* Estilos específicos del input de bronce */
+:host ::ng-deep .search-container-interno-bronze .mat-mdc-text-field-wrapper {
+  background-color: rgb(85, 45, 35);
+}
+
+:host ::ng-deep .search-container-interno-bronze .mat-mdc-form-field-icon-suffix mat-icon,
+:host ::ng-deep .search-container-interno-bronze .mat-mdc-form-field-infix input.mat-mdc-input-element,
+.search-container-interno-bronze .mat-mdc-input-element::placeholder {
+  color: white;
+  --mat-icon-color: white;
+}
+
+/* Estilos específicos del input de blanco */
+:host ::ng-deep .search-container-interno-white .mat-mdc-text-field-wrapper {
+  background-color: white;
+}
+
+:host ::ng-deep .search-container-interno-white .mat-mdc-form-field-icon-suffix mat-icon,
+:host ::ng-deep .search-container-interno-white .mat-mdc-form-field-infix input.mat-mdc-input-element,
+.search-container-interno-white .mat-mdc-input-element::placeholder {
+  color: rgb(85, 45, 35) !important;
+  --mat-icon-color: rgb(85, 45, 35);
+}
+
+/* Configuración de los buscadores */
+.search-container-interno {
+  height: 36px; /* Asegura que todos los elementos tengan la misma altura */
+  padding: 0 30px; 
+}
+
+:host ::ng-deep .search-container-interno .mat-mdc-text-field-wrapper {
+  height: 36px; /* Ajusta este valor según lo necesites */
+  border-radius: 5px;
+}
+
+:host ::ng-deep .search-container-interno .mat-mdc-form-field-flex {
+  height: 100%; /* Asegúrate de que el contenedor interno ocupe toda la altura */
+}
+
+:host ::ng-deep .search-container-interno .mat-mdc-form-field-infix {
+  padding: 0 8px; /* Ajusta el padding interno si es necesario */
+}
+
+:host ::ng-deep .search-container-interno .mat-mdc-input-element {
+  height: 100%; /* Ajusta la altura del input */
+  padding: 0; /* Elimina el padding extra */
+  margin: 0;
+  line-height: 36px; /* Asegúrate de que el texto esté centrado verticalmente */
+}
+
+/* Subrayado en los textos */
+.txt2 {
+  border-bottom: 2px solid; /* Línea de subrayado */
+}
+
+.logo-nav {
+  height: 50px; /* Ajusta el tamaño de la imagen */
+  margin-left: 16px; /* Espacio entre el botón y la imagen */
+}
+
+@media (max-width: 599px) {
+  .logo-nav {
+    height: 40px; /* Ajuste de tamaño en pantallas pequeñas */
+  }
+}

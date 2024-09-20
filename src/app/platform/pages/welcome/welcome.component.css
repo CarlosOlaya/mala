@@ -1,0 +1,37 @@
+.container-welcome {
+    display: flex;
+    height: calc(100vh - 67px); /* Ajusta la altura */
+    background: rgb(85, 45, 35); /* Color de fondo si la imagen no cubre todo el área */
+    /* Imágenes de fondo superpuestas */
+    background-image: url("/assets/logo-beige.png"),url("/assets/logo-cafe.png");
+    background-repeat: no-repeat, no-repeat; /* No repetir ninguna de las imágenes */
+    background-size:  55% 60%, 170% 170%; /* Tamaño de las imágenes */
+    background-position: center center, center center; /* Posición de las imágenes */
+}
+
+.mat-toolbar-nav{
+    background: transparent !important;
+    padding: 0 16px;
+    height: 67px;
+  }
+
+.d-none.d-lg-flex.align-items-center a {
+    padding: 0 15px; /* Espacio entre los enlaces y las líneas */
+    position: relative;
+}
+  
+.txt1,.txt2,.mat-icon,.title-welcome{
+    --mat-icon-color : whitesmoke;
+    color:whitesmoke
+}
+
+.txt2:hover {
+    color: rgb(245, 222, 179);
+ }
+
+.iniciar-sesion{
+    background: whitesmoke;
+    padding: 0px 10px;
+    color: rgb(85, 45, 35);
+    border-radius: 15px;
+}

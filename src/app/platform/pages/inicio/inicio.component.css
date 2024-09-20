@@ -1,0 +1,46 @@
+.title-inicio {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    margin-bottom: 30px;
+}
+
+.container-inicio {
+    height: calc(100vh - 67px); /* Altura de toda la pantalla menos 67px */
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    text-align: center;      /* Centra el texto dentro del h1 */
+    flex-direction: column; /* Asegura que los elementos queden en columna */
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente las cartas */
+    flex-wrap: wrap;         /* Permite que las cartas se ajusten en varias filas si es necesario */
+}
+
+.card {
+    height: 300px; 
+    width: 250px;
+    padding: 10px;
+    align-content: center;
+    border-radius: 35px;
+    box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 1px 1px;
+    transition: transform 0.3s ease; /* Agregar transición para el efecto de traslación */
+    overflow: hidden; /* Ocultar cualquier desbordamiento del contenido */
+    margin-left: auto;
+    margin-right: auto; /* Centra cada carta horizontalmente */
+    margin: 15px;
+}
+
+.card:hover {
+    transform: translateY(-0.5rem); /* Trasladar ligeramente hacia arriba al pasar el mouse */
+}
+
+@media (max-width: 599px) {
+    .container-inicio {
+        padding: 20px;
+        height: 100%;  
+    }
+}

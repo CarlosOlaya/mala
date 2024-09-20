@@ -1,0 +1,73 @@
+<mat-sidenav-container fullscreen>
+    <!-- Panel de navegación -->
+    <mat-sidenav #sidenav mode="push">
+      <mat-toolbar class="mat-toolbar-nav">
+        <span class="title-menu" (click)="sidenav.toggle()">Menú</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>close</mat-icon>
+        </button> 
+      </mat-toolbar>
+  
+      <mat-nav-list class="custom-nav-list">
+        <!-- Generar enlaces dinámicamente usando *ngFor -->
+        <a *ngFor="let producto of productos" 
+        [routerLink]="['/producto', producto.nombre]"
+        mat-list-item
+        (click)="sidenav.toggle()">
+          <mat-icon mat-list-icon class="m-r-10">{{ producto.icono }}</mat-icon>
+          <span>{{ producto.nombre | titlecase }}</span>
+        </a>
+        <hr>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <!-- Barra superior -->
+    <mat-toolbar [ngClass]="toolbarClass" class="mat-toolbar-nav">
+      <button mat-icon-button routerLink="">
+        <mat-icon>home</mat-icon>
+      </button>       
+  
+      <img [src]="logoPath" alt="logo-nav" class="logo-nav">
+  
+      <!-- Íconos para pantallas pequeñas -->
+      <span class="example-spacer"></span>
+  
+      <div class="d-none d-lg-flex align-items-center">
+        <!-- Generar enlaces dinámicamente para productos en la barra superior -->
+        <a *ngFor="let producto of productos" [routerLink]="['/producto', producto.nombre]">
+          <span class="txt2">{{ producto.nombre | titlecase }}</span>
+        </a>
+  
+        <mat-form-field [ngClass]="searchClass" appearance="outline" class="search-container-interno">
+          <input matInput placeholder="Buscar">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </div>
+  
+      <span class="example-spacer"></span>
+  
+      <button mat-icon-button>
+        <mat-icon>pin_drop</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+  
+      <!-- Íconos para pantallas pequeñas -->
+      <div class="d-flex d-lg-none align-items-center">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+  
+    <!-- Contenido -->
+    <div class="wrap-platform">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-container>
+  
