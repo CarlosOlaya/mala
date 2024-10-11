@@ -18,27 +18,33 @@ export class HomeComponent implements OnInit {
     { nombre: 'bolso', icono: 'local_mall' },
     { nombre: 'tarjetero', icono: 'wallet' }
   ];
-  
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    // Verificar ruta actual al cargar el componente
+    this.updateClassesBasedOnRoute(this.router.url);
+
+    // Seguir suscribiéndose a los cambios de navegación
     this.router.events
       .pipe(
-        filter((event: Event): event is NavigationEnd => event instanceof NavigationEnd) // Filtro para solo NavigationEnd
+        filter((event: Event): event is NavigationEnd => event instanceof NavigationEnd)
       )
       .subscribe((event: NavigationEnd) => {
-        const currentUrl = event.urlAfterRedirects; // Usa urlAfterRedirects para la URL final
-
-        // Compara la ruta actual y cambia el logo y la clase de la barra
-        if (currentUrl.includes('/welcome')) {
-          this.toolbarClass = 'toolbar-welcome';
-          this.searchClass = 'search-container-interno-bronze';
-          this.logoPath = 'assets/logo-cafe.png';  // Logo beige
-        }  else {
-          this.toolbarClass = 'toolbar-bronze';
-          this.searchClass = 'search-container-interno-white';
-          this.logoPath = 'assets/logo-beige.png'; 
-        }
+        this.updateClassesBasedOnRoute(event.urlAfterRedirects);
       });
+  }
+
+  // Método para actualizar las clases y el logo basado en la ruta
+  private updateClassesBasedOnRoute(url: string) {
+    if (url.includes('/welcome')) {
+      this.toolbarClass = 'toolbar-welcome';
+      this.searchClass = 'search-container-interno-bronze';
+      this.logoPath = 'assets/logo-cafe.png';  // Logo beige
+    } else {
+      this.toolbarClass = 'toolbar-bronze';
+      this.searchClass = 'search-container-interno-white';
+      this.logoPath = 'assets/logo-beige.png'; 
+    }
   }
 }

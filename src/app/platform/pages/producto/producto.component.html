@@ -1,6 +1,6 @@
 <div class="container-producto">
   <div class="row">
-    <div class="col-9">
+    <div class="col-8 no-select">
       <!-- Información del producto -->
       <div class="row align-items-center">
         <div class="col-auto">
@@ -9,41 +9,49 @@
           </button>
         </div>
         <div class="col p-0">
-          <h1 class="txt2">Inicio/ {{productoNombre | titlecase}}/ Personalizado</h1>
+          <h1 class="txt2">Inicio/ {{ productoPersonalizado.productoNombre| titlecase }}/ Personalizado</h1>
         </div>
         <div>
-          <h1 class="title-personalizado">{{productoNombre + ' + ' + tituloPersonalizado | uppercase}}</h1>
+          <h1 class="title-personalizado"> {{ productoPersonalizado.productoNombre| titlecase }} + {{tituloPersonalizado | titlecase }} </h1>
         </div>
       </div>
-
+      
       <!-- Imagen del producto -->
       <div class="container-img">
         <img [src]="productoUrlImagen" alt="img-personalizada" class="img-personalizada">
       </div>
     </div>
 
-    <div class="col-3 menu">
+    <div class="col-4 menu">
       <!-- Menú principal con botones generados dinámicamente -->
       <div *ngIf="mostrarMenuPrincipal" class="filtro-container">
+        <h2 class="txt-white mb-5">Filtrar y ordenar</h2>
         <button mat-raised-button class="filtro-btn" *ngFor="let filtro of filtros" (click)="filtroSeleccionado(filtro)">
-          {{ filtro | titlecase}}
+          {{ filtro.tipo | titlecase }}
         </button>
       </div>
 
       <!-- Submenú dinámico -->
       <div *ngIf="!mostrarMenuPrincipal" class="submenu-container">
-        <h2>Selecciona un {{ filtroActual | titlecase }}</h2>
-        <!-- Opciones del submenú basadas en el filtro seleccionado -->
-        <div class="row">
-          <button mat-button class="opcion-btn" *ngFor="let opcion of opcionesActuales">
-            {{ opcion | titlecase }}
-          </button>
+        <h2 class="txt-white m-b-40">Selecciona un {{ filtroActual?.tipo }}</h2>
+
+        <!-- Opciones del filtro actual, dos por fila -->
+        <div class="submenu row">
+          <div class="col col-12 col-md-6 col-lg-6" *ngFor="let opcion of opcionesActuales">
+            <button mat-button 
+                    class="opcion-btn" 
+                    (click)="seleccionarOpcion(opcion)"
+                    [ngClass]="{'seleccionado': opcionSeleccionada === opcion.valor}">
+              <img [src]="opcion.imagenUrl" class="opcion-imagen" alt="imagen opcion">
+            </button>
+          </div>
+          
         </div>
 
         <!-- Botones de acción -->
-        <div class="botones-accion">
-          <button mat-raised-button class="accion-btn" (click)="regresarAlMenuPrincipal()">Quitar</button>
-          <button mat-raised-button class="accion-btn">Seleccionar</button>
+        <div class="row row-2">
+          <button mat-raised-button class="accion-btn" (click)="regresarAlMenuPrincipal(true)">Quitar</button>
+          <button mat-raised-button class="accion-btn" (click)="regresarAlMenuPrincipal(false)">Seleccionar</button>
         </div>
       </div>
     </div>

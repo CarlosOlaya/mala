@@ -5,7 +5,7 @@
     <h1 class="title-inicio">Personaliza y eleva tu outfit</h1>
   </div>
   
-  <div class="row row-cols-1 row-cols-md-4 row-cols-lg-3 g-3">
+  <div class="row row-col-1 row-col-md-4 row-col-lg-3 g-3 no-select">
     <div class="col" *ngFor="let producto of productos">
       <div class="card" [routerLink]="['/producto', producto.nombre]">
         <img [src]="producto | imagen" class="card-img-top" alt="Foto de producto">

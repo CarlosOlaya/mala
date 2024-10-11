@@ -5,7 +5,6 @@
     font-family: Quicksand-Light, cursive;
     color: rgb(85, 45, 35);
     --mat-icon-color: rgb(65, 34, 26);
-    /* Quicksand-Bold */
 }
 
 body, html {
@@ -22,6 +21,10 @@ a {
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
+    user-select: none; /* Para la mayoría de navegadores modernos */
+    -webkit-user-select: none; /* Para navegadores basados en WebKit (Chrome, Safari) */
+    -moz-user-select: none; /* Para Firefox */
+    -ms-user-select: none; /* Para Internet Explorer/Edge */
 }
 
 p {
@@ -35,6 +38,12 @@ ul, li {
     list-style-type: none;
 }
 
+h1,h2,h3,h4,h5{
+  user-select: none; /* Para la mayoría de navegadores modernos */
+  -webkit-user-select: none; /* Para navegadores basados en WebKit (Chrome, Safari) */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para Internet Explorer/Edge */
+}
 /*---------------------------------------------*/
 input {
     outline: none;
@@ -60,7 +69,9 @@ button {
 button:hover {
     cursor: pointer;
 }
-
+.txt-white{
+  color: white;
+}
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
@@ -723,4 +734,20 @@ table {
 
 .row{
   margin: 0px;
+}
+
+.no-select {
+  user-select: none; /* Para la mayoría de navegadores modernos */
+  -webkit-user-select: none; /* Para navegadores basados en WebKit (Chrome, Safari) */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para Internet Explorer/Edge */
+}
+
+button[mat-icon-button] {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[mat-icon-button]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

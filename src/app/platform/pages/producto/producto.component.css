@@ -1,92 +1,140 @@
+/* Estilo del contenedor del producto */
 .container-producto {
-    height: calc(100vh - 67px); /* Altura de toda la pantalla menos 67px */
-    padding-left: 15px;
+  height: calc(100vh - 67px); /* Altura de toda la pantalla menos 67px */
+  padding-left: 15px;
 }
 
+/* Título personalizado del producto */
 .title-personalizado {
-    font-size: 30px;
-    text-transform: capitalize;
-    text-align: left;
-    padding-left: 20px;
-  }
+  font-size: 24px;
+  text-transform: capitalize;
+  text-align: left;
+  padding-left: 20px;
+  pointer-events: none;
+}
 
+/* Estilo del menú */
 .menu {
-    background-color: rgb(85, 45, 35);
-    height: calc(100vh - 67px); /* Altura de toda la pantalla menos 67px */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto; /* Permite el scroll vertical si el contenido excede el tamaño del contenedor */
+  background-color: rgb(85, 45, 35);
+  height: calc(100vh - 67px); /* Altura de toda la pantalla menos 67px */
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto; /* Permite el scroll vertical si el contenido excede el tamaño del contenedor */
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* Añade sombra */
+}
 
-  }
+/* Imagen personalizada del producto */
+.img-personalizada {
+  width: 550px;
+  height: 450px;
+  transition: transform 0.3s ease; /* Efecto para la imagen */
+}
 
-  .img-personalizada{
-    width: 450px;
-    height: 450px;
-  }
-  
-
-
+/* Contenedor de filtros */
 .filtro-container {
   display: flex;
   flex-direction: column;
-
+  align-items: center;
 }
 
+/* Contenedor del submenú */
 .submenu-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-
+  margin: 20px 0px;
 }
 
+.submenu {
+  margin: 30px 0px;
+}
+
+/* Botones de filtro */
 .filtro-btn {
   border-radius: 15px;
   margin-bottom: 50px;
   height: 50px;
   width: 220px;
   font-size: 24px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
+/* Efecto hover para los botones de filtro */
+.filtro-btn:hover {
+  transform: translateY(-5px); /* Efecto hover levantando el botón */
+}
+
+
+/* Botones de acción */
 .accion-btn {
   border-radius: 10px;
   height: 40px;
-  width: 140px;
+  width: 120px;
   font-size: 18px;
   margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Efecto hover para los botones de acción */
+.accion-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-/* .container-img{
+/* Contenedor de la imagen */
+.container-img {
   display: flex;
   justify-content: center;
   align-items: center;
-} */
-
-
-.submenu-container {
-  text-align: center;
 }
 
+/* Botones de opción */
 .opcion-btn {
-  background-color: aliceblue;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añade transición suave */
 }
 
-.estilo-btn img {
+/* Imagen dentro de los botones de opción */
+.opcion-btn img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease; /* Transición para la imagen */
 }
 
+/* Efecto hover para el botón de opción */
+.opcion-btn:hover {
+  transform: scale(1.1); /* Escala el botón un poco al hacer hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Añade una sombra suave */
+}
 
+/* Efecto hover para la imagen dentro del botón */
+.opcion-btn:hover img {
+  transform: scale(1.05); /* Escala la imagen un poco más al hacer hover */
+}
+
+/* Efecto para la opción seleccionada */
+.opcion-btn.seleccionado {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1); /* Aumenta el tamaño un poco para resaltar */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo más claro */
+}
+
+/* Hover cuando el botón está seleccionado */
+.opcion-btn.seleccionado:hover {
+  transform: scale(1.15); /* Un poquito más de escala en el hover */
+}

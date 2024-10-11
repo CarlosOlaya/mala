@@ -1,4 +1,5 @@
 export const environment = {
     production: true,
-    baseUrl: 'https://foodieapp-3556.onrender.com/api'
+    baseUrl: 'http://localhost:3000/api'
+    // baseUrl: 'https://mala-shop.onrender.com/'
   };
